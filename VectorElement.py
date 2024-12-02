@@ -33,8 +33,8 @@ class VectorElement(lib.FiniteElement):
         self.sym_points = self.finite_element.sym_points
 
         self.n_dofs = self.n_components * self.finite_element.n_dofs
-        self.dofs_component     = numpy.empty((self.n_dofs), dtype=numpy.int)
-        self.dofs_component_dof = numpy.empty((self.n_dofs), dtype=numpy.int)
+        self.dofs_component     = numpy.empty((self.n_dofs), dtype=int)
+        self.dofs_component_dof = numpy.empty((self.n_dofs), dtype=int)
         self.ordering = ordering
         if (self.ordering == "component-wise"):
             for k_component in range(self.n_components):
